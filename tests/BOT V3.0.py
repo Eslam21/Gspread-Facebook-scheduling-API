@@ -52,7 +52,7 @@ def get_time(sheet_time: str, time_list: List[str]) -> str:
     return closest_datetime
 
 
-def get_confessions(sheet: gspread.models.Worksheet, start_point: int, end_point: int) -> List[List[str]]:
+def get_confessions(sheet: gspread.worksheet, start_point: int, end_point: int) -> List[List[str]]:
     """
     Retrieve confessions from a Google Sheets document.
 
@@ -144,7 +144,6 @@ for confession_data in confessions:
 
     print(confession)
     print()
-    conf_num += 1
 
     is_skipped = confession_data[-1]
     if is_skipped == '1':
